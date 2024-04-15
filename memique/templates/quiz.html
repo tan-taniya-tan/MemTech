@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz</title>
+<style>
+    *{
+        margin: 0;
+        padding:0;
+        font-family: 'Poppins','sans-serif';
+        box-sizing: border-box;
+    }
+    body{
+        background: #001e4d;
+    }
+    .app{
+        background: #fff;
+        width:90%;
+        max-width:600px;
+        margin:100px auto 0;
+        border-radius: 10px;
+        padding: 30px;
+
+    }
+    header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            background-color:#E8F6EF ;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .bx{
+            flex:1;
+            margin: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bx1{
+            height: 2px;
+            width: 2px;
+        }
+        .bx2{
+            flex: 4;
+            display: block;
+        }
+        .cont a{
+            margin-right: 2%;
+            margin-left: 2%;
+            padding: 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-size: large;
+            color: #4C4C6D;
+        }
+        .cont a:hover{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            color: green;
+            background-color: #f0f2f5;
+        }
+        .bx3{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .bx3 a{
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+            padding-left: 6px;
+            padding-right: 6px;
+            transition: all 0.3s ease-in-out;
+        }
+        #id1{
+            background-color: rgb(185, 31, 31);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+
+        }
+        #id2{
+            background-color: rgb(26, 24, 24);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            
+        }
+        .bx3 a:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .app h1{
+            font-size: 25px;
+            font-weight:600;
+            color:#001e4d;
+            border-bottom: 1px solid #333; 
+            padding-bottom: 30px;
+        }
+        .quiz{
+            padding: 20px 0;
+        }
+        .quiz h2{
+            font-size: 18px;
+            color:#001e4d;
+            font-weight: 600;
+        }
+        /* Styles for the score display */
+#score-display {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+#score-display h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#score-display p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+/* Styles for the Know More button */
+#know-more-btn {
+    display: none; /* Initially hidden */
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #3382d7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+
+#know-more-btn:hover {
+    background-color: #1d5a9b;
+}
+
+        .btn{
+            background: white;
+            color:#222;
+            font-weight: 500;
+            width: 100%;
+            border: ipx solid #222;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: left;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.9s;
+        }
+        .btn:hover{
+            background: #222;
+            color:#fff;
+        }
+        #next-btn{
+                background: black;
+                color:#fff;
+                font-weight: 500;
+                width: 150px;
+                border: 0;
+                padding: 10px;
+                margin: 20px auto 0;
+                border-radius: 4px;
+                cursor: pointer;
+                display: none;
+        }
+
+        .correct{
+            background:#9aeabc;
+        }
+        .incorrect{
+            background: #ff9393;
+        }
+        #score-display {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    #know-more-btn {
+        display: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    #know-more-btn:hover {
+        background-color: #45a049;
+    }
+    #score-display{
+        display: none;
+    }
+    #know-more-btn{
+        display: none;
+    }
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="bx bx1"></div>
+        <div class="bx bx2">
+            <div class="cont">
+                <a href="/home" class="ok ok1">Home</a>
+                <a href="/technique" class="ok ok3">Memorization Techniques</a>
+                <a href="/quiz" class="ok ok4">Take Quiz</a>
+                <a href="/logout" class="ok ok5">Logout</a>
+            </div>
+        </div>
+        <div class="bx bx3">
+            <a href="/login" id="id1">Login</a>
+            <a href="/register" id="id2">Register</a>
+        </div>
+    </header>
+<div class="app">
+    <center><h1>META COGNITION TEST</h1></center>
+    <div class="quiz">
+        <h2 id="question">Question goes here</h2>
+        <div id="answer-buttons">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+        </div>
+        <button id="next-btn">Next</button>
+    </div>
+    <div id="score-display" ></div>
+       <center><button id="know-more-btn" onclick="location.href='/methods'">Know More</button></center> 
+    </div>
+
+</div>
+
+
+
+
+    
+
+<script>
+   
+   const questions=[
+        {  level: "PROCEDURAL KNOWLEDGE",
+            question :"I try to use strategies that have worked in the past" ,
+            answers: [
+                     {
+                        text: "True" , correct: true
+                     },
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "PROCEDURAL KNOWLEDGE",
+            question :" I have a specific purpose for each strategy I use" ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {  level: "PROCEDURAL KNOWLEDGE",
+            question :"I am aware of what strategies I use when I study." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {  level: "PROCEDURAL KNOWLEDGE",
+            question :" I find myself using helpful learning strategies automatically." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+
+
+        {   level: "DECLARATIVE KNOWLEDGE",
+            question :"I understand my intellectual strengths and weaknesses" ,
+           
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {  level: "DECLARATIVE KNOWLEDGE",
+            question :"I know what kind of information is most important to learn." ,
+           
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "DECLARATIVE KNOWLEDGE",
+            question :"I am good at organizing information." ,
+           
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "DECLARATIVE KNOWLEDGE",
+            question :"I know what the teacher expects me to learn." ,
+           
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "CONDITIONAL KNOWLEDGE",
+            question :" I learn best when I know something about the topic" ,
+           
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "CONDITIONAL KNOWLEDGE",
+            question :" I use different learning strategies depending on the situation" ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "CONDITIONAL KNOWLEDGE",
+            question :" I can motivate myself to learn when I need to" ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {  level: "CONDITIONAL KNOWLEDGE",
+            question :" I use my intellectual strengths to compensate for my weaknesses." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {    level: "INFORMATION MANAGEMENT STRATEGIES",
+            question :" I slow down when I encounter important information" ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {    level: "INFORMATION MANAGEMENT STRATEGIES",
+            question :"I consciously focus my attention on important information." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {    level: "INFORMATION MANAGEMENT STRATEGIES",
+            question :"I focus on the meaning and significance of new information." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {    level: "INFORMATION MANAGEMENT STRATEGIES",
+            question :"I create my own examples to make information more meaningful." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+            
+        },
+        {    level: "COMPREHENSION MONITORING",
+            question :"I ask myself periodically if I am meeting my goals." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {    level: "COMPREHENSION MONITORING",
+            question :"I consider several alternatives to a problem before I answer" ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {    level: "COMPREHENSION MONITORING",
+            question :" I ask myself if I have considered all options when solving a problem." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "COMPREHENSION MONITORING",
+            question :"I periodically review to help me understand important relationships." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "PLANNING",
+            question :"I pace myself while learning in order to have enough time" ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "PLANNING",
+            question :" I think about what I really need to learn before I begin a task. " ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "PLANNING",
+            question :"I set specific goals before I begin a task." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {    level: "PLANNING",
+            question :"I ask myself questions about the material before I begin" ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {     level: "DEBUGGING STRATEGIES",
+            question :" I ask others for help when I don’t understand something" ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "DEBUGGING STRATEGIES",
+            question :"I change strategies when I fail to understand. " ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {    level: "DEBUGGING STRATEGIES",
+            question :"I re-evaluate my assumptions when I get confused. " ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {    level: "DEBUGGING STRATEGIES",
+            question :"I stop and go back over new information that is not clear." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {   level: "EVALUATION",
+            question :" I know how well I did once I finish a test" ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {    level: "EVALUATION",
+            question :"I ask myself if there was an easier way to do things after I finish a task." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {    level: "EVALUATION",
+            question :" I summarize what I’ve learned after I finish." ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+        },
+        {  
+
+            level: "EVALUATION",
+            question :"I ask myself how well I accomplish my goals once I’m finished" ,
+            answers: [
+                     {text: "True" , correct: true},
+                     {text : "False" , correct:false}
+            ]
+           
+        },
+    ]
+
+
+
+    const levels = {
+        "PROCEDURAL KNOWLEDGE": ["I try to use strategies that have worked in the past.", "I have a specific purpose for each strategy I use.", " I am aware of what strategies I use when I study", "I find myself using helpful learning strategies automatically."],
+        "DECLARATIVE KNOWLEDGE" : ["I understand my intellectual strengths and weaknesses", "I know what kind of information is most important to learn.", "I am good at organizing information", "I know what the teacher expects me to learn."],
+        "CONDITIONAL KNOWLEDGE":["I learn best when I know something about the topic"," I use different learning strategies depending on the situation"," I can motivate myself to learn when I need to.","I use my intellectual strengths to compensate for my weaknesses"],
+        "INFORMATION MANAGEMENT STRATEGIES":[" I slow down when I encounter important information.","I consciously focus my attention on important information","I focus on the meaning and significance of new information","I create my own examples to make information more meaningful"],
+        "COMPREHENSION MONITORING":["I ask myself periodically if I am meeting my goals","I consider several alternatives to a problem before I answer"," I ask myself if I have considered all options when solving a problem.","I periodically review to help me understand important relationships."],
+        "PLANNING":["I pace myself while learning in order to have enough time.","I think about what I really need to learn before I begin a task. ","I set specific goals before I begin a task.","I ask myself questions about the material before I begin"],
+        "DEBUGGING STRATEGIES":[". I ask others for help when I don’t understand something.","I change strategies when I fail to understand","I re-evaluate my assumptions when I get confused.","I stop and go back over new information that is not clear"],
+        "EVALUATION":["I know how well I did once I finish a test.","I ask myself if there was an easier way to dothings after I finish a task."," I summarize what I’ve learned after I finish.","I ask myself how well I accomplish my goals once I am finished."]
+    };
+    let scores = {};
+let currentQuestionIndex = 0;
+
+const questionElement = document.getElementById("question");
+const answerButton = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
+const scoreDisplay = document.getElementById("score-display");
+const knowMoreButton = document.getElementById("know-more-btn");
+
+function startQuiz() {
+    currentQuestionIndex = 0;
+    scores = {}; // Reset scores
+    showQuestion();
+}
+
+function showQuestion() {
+    resetState();
+    const currentQuestion = questions[currentQuestionIndex];
+    questionElement.innerText = currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerText = answer.text;
+        button.classList.add("btn");
+        answerButton.appendChild(button);
+
+        button.addEventListener("click", () => selectAnswer(answer.correct, answer.text));
+    });
+
+    nextButton.style.display = "none"; // Hide next button until an answer is selected
+}
+
+function resetState() {
+    while (answerButton.firstChild) {
+        answerButton.removeChild(answerButton.firstChild);
+    }
+}
+
+function selectAnswer(correct, answerText) {
+    const selectedBtn = event.target;
+    const isCorrect = correct;
+
+    // Apply CSS classes based on correctness
+    if (isCorrect) {
+        selectedBtn.classList.add("correct");
+    } else {
+        selectedBtn.classList.add("incorrect");
+    }
+
+    // Disable all buttons after one is clicked
+    const allButtons = document.querySelectorAll('.btn');
+    allButtons.forEach(button => {
+        button.disabled = true;
+    });
+
+    nextButton.style.display = "block"; // Display next button after selecting answer
+
+    // Log selected answer and level
+    console.log("Selected answer text:", answerText);
+    console.log("Current level:", questions[currentQuestionIndex].level);
+   
+    // Save user's answer
+    const level = questions[currentQuestionIndex].level;
+    scores[level] = scores[level] || 0; // Initialize score for the level if not exists
+    if (isCorrect) {
+        scores[level]++;
+    }
+}
+
+
+function calculateScores() {
+    // Initialize scores object for each level
+    const levelScores = {};
+    // Loop through each question
+    questions.forEach(question => {
+        // Get the level of the current question
+        const level = question.level;
+        // Initialize score for the level if not exists
+        if (!levelScores[level]) {
+            levelScores[level] = 0;
+        }
+        // Check if the user's answer for this question is correct
+        const userAnswer = getUserAnswer(question.question);
+        if (userAnswer && userAnswer.correct) {
+            // Increment score for the level if the answer is correct
+            levelScores[level]++;
+        }
+    });
+    // Return the calculated scores for each level
+    return levelScores;
+}
+
+
+function calculateScores() {
+    const levelPercentages = {};
+
+    Object.keys(levels).forEach(level => {
+        const totalQuestions = levels[level].length;
+        let correctAnswers = 0;
+
+        questions.forEach(question => {
+            if (question.level === level) {
+                const userAnswer = getUserAnswer(question.question);
+                if (userAnswer && userAnswer.correct) {
+                    correctAnswers++;
+                }
+            }
+        });
+
+        const scorePercentage = (correctAnswers / 4) * 100;
+        levelPercentages[level] = scorePercentage.toFixed(2);
+    });
+
+    return levelPercentages;
+}
+
+
+
+
+
+function getUserAnswer(question) {
+    // Find the user's answer for the given question
+    const selectedButton = document.querySelector('.btn.correct');
+    if (selectedButton) {
+        const answerText = selectedButton.textContent;
+        return questions.find(q => q.question === question).answers.find(a => a.text === answerText);
+    }
+    return null;
+}
+
+function findMaxScoreLevel() {
+    let maxScore = 0;
+    let maxScoreLevel = "";
+    Object.keys(scores).forEach(level => {
+        if (scores[level] > maxScore) {
+            maxScore = scores[level];
+            maxScoreLevel = level;
+        }
+    });
+    return maxScoreLevel;
+}
+
+function handleNextButton() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+        calculateScores();
+        showScore();
+    }
+}
+
+function showScore() {
+    resetState();
+    questionElement.style.display = "none"; // Hide the question element
+    scoreDisplay.innerHTML = "<center><h2>Scores</h2></center>";
+    Object.keys(scores).forEach(level => {
+        const scoreElement = document.createElement("p");
+        const percentage = ((scores[level] / 4) * 100).toFixed(2);
+        scoreElement.textContent = `${level}: ${percentage}%`;
+        scoreDisplay.appendChild(scoreElement);
+    });
+    scoreDisplay.style.display = "block"; // Display the score
+    nextButton.style.display = "none"; // Hide next button after displaying score
+    knowMoreButton.style.display = "block"; // Display know more button
+}
+
+function redirectToKnowMore() {
+    
+    window.location.href = "/methods";
+}
+
+
+nextButton.addEventListener("click", handleNextButton);
+knowMoreButton.addEventListener("click", redirectToKnowMore);
+
+startQuiz();
+</script>
+</body>
+</html>

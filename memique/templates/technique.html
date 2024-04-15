@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="static/img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="static/lib/flaticon/font/flaticon.css" rel="stylesheet">
+        <link href="static/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="static/css/style.css" rel="stylesheet">
+        <style>
+             @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+            *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        label{
+            color: white;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            overflow-x: hidden;
+            background-color:#e6fff3;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            background: transparent;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: #001a33;
+            height: 65px;
+            margin-right: -60px;
+        }
+        .bxx{
+            flex:1;
+            margin: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bxx2{
+            flex: 4;
+            display: block;
+        }
+       
+        .cont a{
+            margin-right: 2%;
+            margin-left: 2%;
+            padding: 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-size: large;
+            color: whitesmoke;
+        }
+        .cont a:hover{
+            box-shadow: 1px 3px 18px whitesmoke;
+            transform: scale(1.02);
+            color:#b35353;
+            background-color: #f0f2f5;
+        }
+        
+        .bxx3{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin-right: 70px;
+        }
+        .cen{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            color: white;
+            margin-left: 30px;
+        }
+        .bxx3 a{
+            text-decoration: none;
+            font-size: medium;
+            padding-left: 6px;
+            padding-right: 6px;
+            transition: all 0.3s ease-in-out;
+        }
+        #id1{
+            background-color: rgb(185, 31, 31);
+            padding: 5px;
+        }
+        .ok2{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            background-color: #f0f2f5;
+        }
+        #id2{
+            background-color: whitesmoke;
+            padding: 5px; 
+        }
+        .bxx3 a:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        
+        }
+        img{
+            border-radius: 15px 50px 30px;
+        }
+        .img1{
+            flex:right;
+            width: 48%;
+            margin-left: 65%;
+            margin-top: -300px;
+        }
+        .img3{
+            flex:left;
+            width: 48%;
+           margin-top: -40px;
+            margin-left: 50px;
+        }
+        .img2{
+            flex:left;
+            width: 48%;
+           margin-top: 70px;
+           margin-bottom: -20px;
+            margin-left: 150px;
+            padding-bottom: 150px;
+        }
+        .img5{
+            flex:left;
+            width: 48%;
+           margin-top: -50px;
+            margin-left: 80px;
+        }
+        .img7{
+            flex:left;
+            width: 48%;
+           margin-top: 270px;
+            margin-left: 70px;
+        }
+        .img4{
+            flex:right;
+            width: 48%;
+            margin-left: 55%;
+            margin-top: -320px;
+        }
+        .img6{
+            flex:right;
+            width: 48%;
+            margin-left: 55%;
+            margin-top: -280px;
+            margin-bottom: 50px;
+        }
+        
+        .img8{
+            flex:right;
+            width: 48%;
+            margin-left: 55%;
+            margin-top: -300px;
+            margin-bottom: 50px;
+        }
+        .p1{
+            box-sizing: border-box;
+            width: 48%;
+            flex:left;
+            margin-top: 120px;
+            margin-left: 150px;
+            font-size: 25px;
+            
+        }
+        .p3{
+            box-sizing: border-box;
+            width: 48%;
+            flex:right;
+          
+            margin-left: 50%;
+            font-size: 20px;
+            margin-top: -250px;
+        }
+        .p2{
+            box-sizing: border-box;
+            width: 48%;
+            flex:right;
+          
+            margin-left: 50%;
+            font-size: 20px;
+            margin-top: -350px;
+        }
+        .p5{
+            box-sizing: border-box;
+            width: 40%;
+            flex:right;
+          padding-top: 30px;
+            margin-left: 50%;
+            font-size: 20px;
+            margin-top: -230px;
+        }
+        .p7{
+            box-sizing: border-box;
+            width: 40%;
+            flex:right;
+          padding-top: 30px;
+            margin-left: 50%;
+            font-size: 20px;
+            margin-top: -250px;
+            padding-bottom: 100px;
+        }
+        .p4{
+            box-sizing: border-box;
+            width: 48%;
+            flex:left;
+            margin-top: 70px;
+            margin-left: 60px;
+            font-size: 20px;
+        }
+        .p6{
+            box-sizing: border-box;
+            width: 48%;
+            flex:left;
+            margin-top: -100px;
+            margin-left: 60px;
+            font-size: 20px;
+            padding-top: 170px;
+        }
+        .p8{
+            box-sizing: border-box;
+            width: 48%;
+            flex:left;
+            margin-top: -100px;
+            margin-left: 60px;
+            font-size: 20px;
+            padding-top: 200px;
+        }
+        .head1{
+            color: #001a33;
+            font-size: 40px;
+            margin-top: 260px;
+            margin-left: 150px;
+            margin-bottom: -60px;
+        }
+        .head3{
+            color: #001a33;
+            font-size:30px;
+            margin-top: 150px;
+            margin-left: 50%;
+            margin-bottom: -30px;
+           padding-bottom: 0px;
+        }
+        .head5{
+            color: #001a33;
+            font-size:30px;
+            margin-top: -30px;
+            margin-left: 50%;
+            margin-bottom: 10px;
+           padding-bottom: 0px;
+           margin-right: -60px;
+        }
+        .head7{
+            color: #001a33;
+            font-size:30px;
+            margin-top: 10px;
+            margin-left: 50%;
+            margin-bottom: -330px;
+ 
+        }
+        .head2{
+            color: #001a33;
+            font-size:30px;
+            margin-top: 90px;
+            margin-left: 50%;
+            margin-bottom: -90px;
+           padding-bottom: 0px;
+        }
+        .head4{
+            color: #001a33;
+            font-size: 30px;
+            margin-bottom: -30px;
+            margin-left: 60px;
+        }
+        .head6{
+            color: #001a33;
+            font-size: 40px;
+            margin-top: 20px;
+            margin-left: 80px;
+            margin-bottom: -150px;
+        }
+        .head8{
+            color: #001a33;
+            font-size: 40px;
+            margin-top: 70px;
+            margin-left: 50px;
+            margin-bottom: -170px;
+        }
+        .div1,.div4{
+            margin-top: 150px;
+        }
+        .div3,.div4{
+            padding: 40px;
+        }
+        .div5{
+            padding-top: 180px;
+            margin-top: 50px;
+            padding-bottom: 50px;
+        }
+        .div6{
+            padding-top: 80px;
+            margin-top: 50px;
+            padding-bottom: 50px;
+        }
+        .div7{
+            padding-top: 150px;
+            
+            padding-bottom: 50px;
+        }
+        .div8{
+            padding-top: 30px;
+            
+            padding-bottom: 100px;
+        }
+        footer{
+            padding-top: 10px;
+            background-color: #001a33;
+            padding-bottom: 10px;
+            position: relative;
+            margin-right: -60px;
+        }
+        h3{
+            color: #ffe6ff;
+        }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="bxx bxx1"></div>
+            
+            <div class="bxx bxx2">
+                <div class="cont">
+                    <a href="/home" class="ok ok1">Home</a>
+                    <a href="/technique" class="ok ok3">Metacognition</a>
+                    <a href="/quiz" class="ok ok4">Take Quiz</a>
+                    <a href="/logout" class="ok ok5">Logout</a>
+                </div>
+            </div>
+            <div class="bx bxx3">
+                <a href="/login" id="id1">Login</a>
+                <a href="/register" id="id2">Register</a>
+            </div>
+        </header>
+
+        <div class="main">
+             
+                
+
+
+             <div class="div2">
+                
+                <div class="head2" ><h1><strong>KNOWLEDGE</strong></h1></div>
+                <div class="img2"><img width="70%" height="30%" src="static/knowledge.jpg" alt="image"></div>
+            
+              <div class="p2" ><p>-- Knowledge about cognition corresponds to what 
+                    students know about themselves, strategies, and 
+                    conditions under which strategies are most 
+                    useful. 
+                   </p><p>-- Regulation of cognition corresponds to 
+                    knowledge about the way students plan, 
+                    implement strategies, monitor, correct 
+                    comprehension errors, and evaluate their 
+                    learning.
+                     
+                    </p></div>
+                  </div>
+            <div class="div1">
+             <div class="head1" ><h1><strong>METACOGNITION</strong></h1></div>
+                <div class="p1" ><p>It is essential to 
+                    successful learning because it 
+                    enables individuals to better 
+                    manage their cognitive skills and 
+                    to determine weaknesses that
+                    can be corrected by constructing new cognitive 
+                    skills. Almost anyone who can perform a skill is 
+                    capable of metacognition – that is, thinking 
+                    about how they perform that skill. 
+                     
+                    </p></div>
+                    <div class="img1"><img width="60%" height="30%" src="static/brain.jpg" alt="image"></div>
+             </div>
+             <div class="div3">
+                <div class="head3" ><h2><strong>DECLARATIVE KNOWLEDGE</strong></h2></div>
+                <div class="img3"><img width="80%" height="50%" src="static/declarative.jpg" alt="image"></div>
+               
+
+                <div class="p3" ><p>
+                    -- The factual knowledge the learner needs before being able 
+                     to process or use critical thinking related to the topic<br>
+                    -- Knowing about, what, or that<br>
+                    -- Knowledge of one’s skills, intellectual resources, and 
+                     abilities as a learner<br>
+                    -- Students can obtain knowledge through presentations, 
+                     demonstrations, discussions<br>
+                    
+                     
+                    </p></div>
+                    
+             </div>
+
+
+             <div class="div4">
+                
+                <div class="head4" ><h2><strong>PROCEDURAL KNOWLEDGE</strong></h2></div>
+                <div class="p4" ><p>
+                    -- The application of knowledge for the purposes of 
+                     completing a procedure or process<br>
+                    -- Knowledge about how to implement learning procedures 
+                     (e.g. strategies)<br>
+                    -- Requires students know the process as well as when to
+                     apply process in various situations<br>
+                    -- Students can obtain knowledge through discovery, 
+                     cooperative learning, and problem solving.<br>
+                     
+                    </p></div>
+                    <div class="img4"><img width="90%" height="100%" src="static/procedural.jpeg" alt="image"></div>
+             </div>
+
+
+             <div class="div5">
+                <div class="head5" ><h2><strong>CONDITIONAL KNOWLEDGE</strong></h2></div>
+                <div class="img5"><img width="80%" height="100%" src="static/simulation.jpeg" alt="image"></div>
+               
+
+                <div class="p5" ><p>
+                    
+-- The determination under what circumstances specific 
+ processes or skills should transfer<br>
+-- Knowledge about when and why to use learning 
+ procedures<br>
+-- Application of declarative and procedural knowledge with
+ certain conditions presented<br>
+-- Students can obtain knowledge through simulation<br>
+                    
+                     
+                    </p></div>
+                    
+             </div>
+            
+             <div class="div6">
+                
+                <div class="head6" ><h2><strong>PLANNING</strong></h2></div>
+                <div class="p6" ><p>
+                    -- Planning, goal setting, and allocating resources prior to learning.
+                </p><p>-- Effective meeting planning is highly important for the success of any project
+                       or initiative. 
+                   <p><p> -- It involves setting clear objectives, ensuring the right people are in 
+                       attendance, and creating an agenda that fosters productive discussion. 
+                     
+                    </p></div>
+                    <div class="img6"><img width="70%" height="50%" src="static/planning.jpg" alt="image"></div>
+             </div>
+           <div class="div7">
+             <div class="head7" ><h2><strong>INFORMATION MANAGEMENT STRATEGIES</strong></h2></div>
+                <div class="img7"><img width="80%" height="50%" src="static/information.jpg" alt="image"></div>
+               
+
+                <div class="p7" ><p>
+                    -- An information management strategy is a plan that guides a company to keep
+                     its IM practices in sync, improve its processes, and prepare for the future1<br><br>
+                    -- Skills and strategy sequences used to process information 
+                    more efficiently (e.g., organizing, elaborating, summarizing,
+                    selective focusing)
+                   
+                   
+
+                    
+                     
+                    </p>
+                </div>
+                    
+             </div> 
+            </div>
+
+            <div class="div8">
+                <div class="head8" ><h2><strong>ASSESSMENT STRATEGIES</strong></h2></div>
+                <div class="p8" ><p>
+                    COMPREHENSION MONITORING: Assessment of one’s learning or strategy use<br><br>
+                    DEBUGGING STRATEGIES: Strategies used to correct comprehension and performance
+                     errors<br><br>
+                    EVALUATION: Analysis of performance and strategy effectiveness after a 
+                     learning episode
+                    
+                    </p></div>
+                    <div class="img8"><img width="70%" height="50%" src="static/assesment.jpg" alt="image"></div>
+             </div>
+            </div>
+                
+         </div> 
+             
+
+
+
+        </div>
+        <footer>
+            <h3 align="center">&copy; 2024 MemTech. All rights reserved.</h3>
+        </footer>
+    </body>
+</html>

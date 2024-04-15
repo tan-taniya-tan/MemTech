@@ -1,0 +1,83 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+      
+  body{
+    background-image: url("static/login.jpg");
+    background-size: cover;
+  }
+ 
+  img.lessBright {
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.5);
+}  
+
+.main{
+    width:40%;
+}
+.container{
+    width:40%;
+    margin-top: 40px;
+    height: 400px;
+    margin-left: 350px;
+}
+
+input{
+    height:40px;
+    border:none;
+}
+a{
+    margin-top: 80px;
+    text-decoration: none;
+    color:rgb(103, 97, 97);
+}
+.main2{
+    height:200px;
+    width:50px;
+}
+h1{
+    color:black;
+    font-size: 40px;
+    font-weight: 400px;
+}
+       </style>
+</head>
+
+<body>
+    <center><h1 color="white"><strong>MEMTECH</strong></h1></center>
+    <div class="main1">
+        <div class="main">
+            
+            
+        </div>
+    
+        <div class="container">
+            <center><h2 color="white">Register</h2></center>
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+            <form method="post">
+               
+                <input type="text" id="username" name="username" required placeholder="Username"><br>
+                
+                <input type="password" id="password" name="password" required placeholder="Password"><br>
+               
+                <input type="email" id="email" name="email" required placeholder="E-mail"><br><br>
+                <input type="submit" value="Register"><br><br><br>
+                <center><a href="/login" class="register">Already Registered? login Here</a></center>  
+            </form>
+        </div>
+</div>
+<footer>
+    <br><br><br>
+    <h3 align="center">&copy; 2024 MemTech. All rights reserved.</h3>
+</footer>
+</body>
+</html>

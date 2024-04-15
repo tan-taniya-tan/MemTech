@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+      </style>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            background-color:#E8F6EF ;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .bx{
+            flex:1;
+            margin: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bx1{
+            height: 2px;
+            width: 2px;
+        }
+        .bx2{
+            flex: 4;
+            display: block;
+        }
+        .cont a{
+            margin-right: 2%;
+            margin-left: 2%;
+            padding: 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-size: large;
+            color: #4C4C6D;
+        }
+        .cont a:hover{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            color: green;
+            background-color: #f0f2f5;
+        }
+        .bx3{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .bx3 a{
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+            padding-left: 6px;
+            padding-right: 6px;
+            transition: all 0.3s ease-in-out;
+        }
+        #id1{
+            background-color: rgb(185, 31, 31);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+
+        }
+        #id2{
+            background-color: rgb(26, 24, 24);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            
+        }
+        .bx3 a:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .video{
+            margin-top: 2%;
+            background-color: #f7e4cc;
+            display: flex;
+        }
+        .ol{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .or{
+            flex: 1;
+        }
+        .services{
+            width: 100%;
+            display: flex;
+            height: 80vh;
+        }
+        .services .left{
+            flex:1;
+            background-color: #a83d35;
+            font-size: 3em;
+        }
+        .services .right{
+            flex:1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+        }
+        .services .right .top{
+            display: flex;
+            height: 40vh;
+        }
+        .services .right .top .tl{
+            flex: 1;
+            background-color: #1a1e22;
+        }
+        .services .right .top .tr{
+            flex: 1;
+            background-color: #303438;
+        }
+        .services .right .bottom{
+            display: flex;
+            height: 40vh;
+        }
+        
+        .services .right .bottom .bl{
+            flex: 1;
+            background-color: #303438;
+        }
+        .services .right .bottom .br{
+            flex: 1;
+            background-color: #1a1e22;
+        }
+        .cen{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            color: white;
+        }
+        .cen:hover{
+            background-color: #bb5149;
+        }
+        .card{
+            margin: 3%;
+            padding: 5px;
+        }
+        #tags{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .world
+        {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .ct{
+            flex: 1;
+        }
+        .mad{
+            position: relative;
+            display: flex;
+        }
+        .mad img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            pointer-events: none;
+        }
+        .sample
+        {
+            height: 120vh;
+        }
+        .ok1{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            background-color: #f0f2f5;
+        }
+        .ok1:a{
+            color: green;
+        }
+        .ct1{
+            display: flex;
+            flex-direction: column;
+        }
+        .show{
+            flex: 1;
+            margin: 3%;
+            padding: 10px;
+            height: 10vh;
+            border-radius: 6px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: all 0.3s ease-in-out;
+        }
+        .show:hover{
+            background-color: #bb5149;
+            color: white;
+        }
+        #btn{
+            border-radius: 10px;
+            background-color: #F99B7D;
+            border: 0px;
+            font-size: larger;
+            padding: 7px;
+            margin: 2%;
+            transition: all 0.2s ease-in-out;
+        }
+        #btn:hover{
+            transform: scale(1.09);
+            cursor: pointer;
+        }
+        header{
+     position: -webkit-sticky;
+    position: sticky;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bx bx1"></div>
+        <div class="bx bx2">
+            <div class="cont">
+                <a href="/home" class="ok ok1">Home</a>
+                <a href="/technique" class="ok ok3">Memorization Techniques</a>
+                <a href="/quiz" class="ok ok4">Take Quiz</a>
+                <a href="/logout" class="ok ok5">Logout</a>
+            </div>
+        </div>
+        <div class="bx bx3">
+            <a href="/login" id="id1">Login</a>
+            <a href="/register" id="id2">Register</a>
+        </div>
+    </header>
+    <main>
+        <div class="mad">
+            <img width="100%" src="static/fall.jpg" alt="other">
+         
+        </div>
+            <div class="sample">
+</div>
+           
+            <h1 align="center" style="padding-top:200px; padding-bottom: 50px;">Don't Memorize.   Just Summarize</h1>
+        
+            
+                <div class="services">
+            <div class="cen left">
+                How we will help you?
+            </div>
+            <div class="right">
+                <div class="top">
+                    <div class="cen tl">
+                        <div class="card">
+                        <div class="here" id="tags">
+                        
+                    </div>
+                        <h2 align="center">Training</h2>
+                    
+                    </div>
+                    </div>
+                    <div class="cen tr">
+                        <div class="card">
+                            <div class="here" id="tags">
+                            <img src="static/team.png" width="20%" alt="">
+                        </div>
+                            <h2 align="center">Clarification</h2>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="cen bl">
+                        <div class="card">
+                            <div class="here" id="tags">
+                            <img src="static/first-aid-box.png" width="20%" alt="">
+                        </div>
+                            <h2 align="center">Build you</h2>
+                           
+                        </div>
+                    </div>
+                    <div class="cen br">
+                        <div class="card">
+                            <div class="here" id="tags">
+                            <img src="static/home.png" width="20%" alt="">
+                        </div>
+                            <h2 align="center">Support you</h2>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        <br>
+        
+    </main>
+    <footer>
+        <h3 align="center">&copy; 2024 MemTech. All rights reserved.</h3>
+    </footer>
+</body>
+<script>$(window).scroll(function () {
+    if ($(this).scrollTop() > 0) {
+        $('.navbar').addClass('nav-sticky');
+    } else {
+        $('.navbar').removeClass('nav-sticky');
+    }
+});</script>
+</html>
