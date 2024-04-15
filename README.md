@@ -1,8 +1,8 @@
-## Memory Techniques Website
+# Memory Techniques Website
 This website is designed using Flask and MongoDB to provide a seamless user experience. It features an intuitive user interface and incorporates various pages to cater to different functionalities.
 
 ## Features:
-# Login and Registration: 
+### Login and Registration: 
 Users can create accounts and securely log in to access personalized features and settings.
 
 # Home Page and Metacognition Page:
